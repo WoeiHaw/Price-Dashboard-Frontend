@@ -1,4 +1,4 @@
-import { apiSlice } from "./apiSlice";
+
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const coffeApi = createApi({
@@ -7,6 +7,10 @@ export const coffeApi = createApi({
   endpoints: (builder) => ({
     getCoffePrice: builder.query({
       query: () => ({ url: "/coffe" }),
+      merge :(existing,incoming)=>({
+        ...existing,
+        ...incoming
+      })
     }),
     overrideExisting: true,
   }),

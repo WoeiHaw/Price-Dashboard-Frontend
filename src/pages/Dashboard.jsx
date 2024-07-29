@@ -28,9 +28,10 @@ function Dashboard() {
     error,
     isLoading: getCoffePriceIsLoading,
   } = getCoffePrice;
-
-  console.log(coffePriceData);
-  // if (error) return <div> Error :{error.data}</div>;
+  const dates = coffePriceData?.Date;
+  const lazadaPrice = coffePriceData?.Lazada;
+  const pgmallPrice = coffePriceData?.PGMall;
+  const shopee = coffePriceData?.Shopee;
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -77,7 +78,12 @@ function Dashboard() {
             {/* Cards */}
             <div className="grid grid-cols-12 gap-6">
               {/* Line chart (Acme Plus) */}
-              <DashboardCard01 />
+              <DashboardCard01
+                labels={coffePriceData?.Date}
+                data1={coffePriceData?.Lazada}
+                data2={coffePriceData?.PGMall}
+                data3={coffePriceData?.Shopee}
+              />
               {/* Line chart (Acme Advanced) */}
               <DashboardCard02 />
               {/* Line chart (Acme Professional) */}

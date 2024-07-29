@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./rootReducer";
-import { apiSlice } from "./api/apiSlice";
+import { coffeApi} from "./api/api";
 const store = configureStore({
   reducer: {
-    [apiSlice.reducerPath]: apiSlice.reducer,
+    [coffeApi.reducerPath]: coffeApi.reducer,
   },
   //devTools: false,
   middleware: (getDefaultMiddleware) => {
-    const middleware = [...getDefaultMiddleware(), apiSlice.middleware];
+    const middleware = [...getDefaultMiddleware(), coffeApi.middleware];
     return middleware;
   },
 });
