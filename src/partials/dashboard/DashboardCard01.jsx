@@ -8,12 +8,6 @@ import EditMenu from "../../components/DropdownEditMenu";
 import { tailwindConfig, hexToRGB } from "../../utils/Utils";
 
 function DashboardCard01({ labels, data1, data2, data3 }) {
-  let label_array;
-  console.log("labels");
-  if (Array.isArray(labels)) {
-    label_array = labels;
-  }
-
   const chartData = {
     labels: labels,
     datasets: [
@@ -72,6 +66,7 @@ function DashboardCard01({ labels, data1, data2, data3 }) {
       },
     ],
   };
+  console.log(chartData);
 
   return (
     <div className="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white dark:bg-gray-800 shadow-sm rounded-xl">

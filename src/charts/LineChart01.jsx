@@ -35,7 +35,6 @@ function LineChart01({ data, width, height }) {
   const { tooltipBodyColor, tooltipBgColor, tooltipBorderColor } = chartColors;
 
   useEffect(() => {
-    console.log(data);
     const ctx = canvas.current;
     // eslint-disable-next-line no-unused-vars
     const newChart = new Chart(ctx, {
@@ -53,7 +52,7 @@ function LineChart01({ data, width, height }) {
           x: {
             type: "time",
             time: {
-              parser: "YYYY-MM-DD",
+              parser: "MM-DD-YYYY",
               unit: "month",
             },
             display: false,

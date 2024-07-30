@@ -79,10 +79,10 @@ function Dashboard() {
             <div className="grid grid-cols-12 gap-6">
               {/* Line chart (Acme Plus) */}
               <DashboardCard01
-                labels={coffePriceData?.Date}
-                data1={coffePriceData?.Lazada}
-                data2={coffePriceData?.PGMall}
-                data3={coffePriceData?.Shopee}
+                labels={dates}
+                data1={lazadaPrice}
+                data2={pgmallPrice}
+                data3={shopee}
               />
               {/* Line chart (Acme Advanced) */}
               <DashboardCard02 />
